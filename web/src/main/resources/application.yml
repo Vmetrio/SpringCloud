@@ -1,0 +1,46 @@
+server:
+  port: 8300
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://meng:meng@localhost:8600/eureka/
+  instance:
+    metadata-map:
+      user.name: meng
+      user.password: 123456
+    leaseRenewalIntervalInSeconds: 30
+    health-check-url-path: /monitor/health
+    ip-address: localhost
+    prefer-ip-address: true
+    instance-id: ${eureka.instance.ip-address}:${server.port}
+
+management:
+  endpoints:
+    web:
+      base-path: /monitor
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+
+spring:
+  admin:
+    discovery.converter.management-context-path: /monitor
+  application:
+    name: web
+  flyway:
+    locations: classpath:/db
+    baseline-on-migrate: true
+  thymeleaf:
+    cache: false
+  zipkin:
+    base-url: http://localhost:9411
+
+feign:
+ hystrix:
+  enabled: true
+ httpclient:
+   enabled: true
+

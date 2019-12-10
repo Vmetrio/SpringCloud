@@ -1,0 +1,66 @@
+server:
+  port: 8610
+spring:
+  application:
+    name: Admin System
+  security:
+    user:
+      name: meng
+      password: 123456
+  boot:
+    admin:
+      discovery.converter.management-context-path: /monitor
+      ui:
+        title: Cloud-服务监控平台
+      notify:
+        mail:
+          from: xxx@163.com
+          # , 分隔发送多人
+          to: xxx@qq.com
+          #抄送
+          #cc:
+  mail:
+    host: smtp.163.com
+    #邮箱
+    username: xxx@163.com
+    #smtp密码
+    password: xxx
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+            required: true
+
+management:
+  endpoints:
+    web:
+      base-path: /monitor
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: ALWAYS
+  #关闭闭未使用或不重要的检查点
+  health:
+    db.enabled: false
+    mail.enabled: false
+    redis.enabled: false
+    mongo.enabled: false
+
+eureka:
+  instance:
+    metadata-map:
+      user:
+        name: meng
+        password: 123456
+    leaseRenewalIntervalInSeconds: 30
+    health-check-url-path: /monitor/health
+    ip-address: localhost
+    prefer-ip-address: true
+    instance-id: ${eureka.instance.ip-address}:${server.port}
+  client:
+    registryFetchIntervalSeconds: 5
+    serviceUrl:
+      defaultZone: http://meng:meng@localhost:8600/eureka/
