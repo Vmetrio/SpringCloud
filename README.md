@@ -1,13 +1,13 @@
 # SpringCloud
 SpringCloud脚手架
 
-所用组件：
-1、Feign (Finchley版本)
-2、Hystrix (Finchley版本)
-3、Ribbon (Finchley版本)
-4、Sleuth （2.19.2版本，springboot 2.1）
-5、Eureka （Finchley版本)
-6、SBA （基于springboot 2.2.1）
+所用组件：  
+1、Feign (Finchley版本)  
+2、Hystrix (Finchley版本)  
+3、Ribbon (Finchley版本)  
+4、Sleuth （2.19.2版本，springboot 2.1）  
+5、Eureka （Finchley版本)  
+6、SBA （基于springboot 2.2.1）  
 
 Sleuth：  
 下载链接：
