@@ -13,7 +13,7 @@ Sleuth：
 下载链接：
 https://repo1.maven.org/maven2/io/zipkin/zipkin-server/  
 运行命令：
-nohup java -jar zipkin.jar --STORAGE_TYPE=mysql --MYSQL_DB=zipkin --MYSQL_USER=root --MYSQL_PASS=root --MYSQL_HOST=localhost --MYSQL_TCP_PORT=3306 &
+nohup java -jar zipkin.jar --STORAGE_TYPE=mysql --MYSQL_DB=zipkin --MYSQL_USER=root --MYSQL_PASS=root --MYSQL_HOST=localhost --MYSQL_TCP_PORT=3306 &  
 运行之前导入zipkin.sql
 
 SBA：
